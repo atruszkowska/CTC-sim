@@ -14,3 +14,9 @@ The University of Alabama in Huntsville
 Huntsville, AL 35899, USA  
 
 Email: [at0175@uah.edu](mailto:at0175@uah.edu)
+
+## Requirements and Compatibility
+
+The software is currently developed and tested on Linux operating systems. The programs are designed to be readily adaptable to macOS and Windows operating systems, and the PI will provide assistance with such adaptations to facilitate broader use of the software.
+
+Compilation requires support for the C++17 standard. The Python scripts were developed and tested using Python 3.8.10; other Python 3.x versions may also be compatible, although they have not been explicitly tested.
