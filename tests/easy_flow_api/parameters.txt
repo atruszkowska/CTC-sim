@@ -1,0 +1,64 @@
+// Velocity magnitude 
+4.83e-8
+// Pressure drop
+1.8667
+// Viscosity of the fluid
+1e-3
+// Density of the fluid
+1e3
+// Maximum velocity
+0.034
+// Characteristic dimension
+0.8
+// Interaction radius
+1.1e-4
+// Amplitude of noise
+0.0
+// Particle radius
+1.01e-5
+// Cell mass
+4.79e-12
+// Minimum allowable particle distance
+0.99e-6
+// Bond normal stiffness
+1e-8
+// Bond shear stiffness
+1e-11
+// Bond normal strength
+4.46e-14
+// Bond shear strength
+2.02e-15
+// Bond max gap
+2.02e-5
+// Max bond distance
+3.03e-5
+// Max wall bond distance
+2.42
+// Number of particles
+10
+// Domain length x
+1e-3
+// Domain length y
+3e-4
+// Minimum allowable distance with wall
+1.01e-5
+// Domain center x
+5e-4
+// Domain center y
+1.5e-4
+// Number of repetitions
+2
+// Maximum simulation time
+3
+// Time step
+1
+// Wall bond normal stiffness
+1e-3
+// Wall bond shear stiffness
+1e-2
+// Wall bond normal strength
+1e1
+// Wall bond shear strength
+1e6
+// Wall bond max gap
+5.106e-05

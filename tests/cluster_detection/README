@@ -1,0 +1,31 @@
+Manual (for now) test for cluster detection and computation of cluster area.
+
+generate_data contains files needed to get new/more datasets.
+
+Current datasets (permanent*.txt files) should give the following results in terms of cluster components (cell IDs in each cluster):
+
+'Time step - Realization' : [[cell ID in each cluster represented as a sublist]]
+
+Individual cluster areas at each collected time step and realization:
+
+[1.0954530000002546e-10, 2.591136999998641e-10, 3.03043000000319e-11, 8.168055827429006e-06, 1.3407927543058726e-05, 1.4716639999998864e-10, 1.9374638086942836e-05, 9.438899088348522e-06, 1.9684534055951795e-05, 3.439646000001444e-10, 1.718386245871269e-05, 5.050158413356204e-06, 1.282140000000828e-10, 1.1345311807087525e-05, 1.6936700000000158e-11, 7.344495000003741e-11, 1.568170003539062e-05, 1.0046693796965454e-05, 7.433906711816919e-06, 1.0621678257226888e-05, 1.786259779538877e-05]
+
+[1.3407927543058726e-05, 7.344495000003741e-11]
+[0.013963517996908944, 0.04430413561881103, 0.01845352985989401]
+[0.013963517996908944]
+[]
+
+Results (printed):
+
+Sum of cluster areas at each time step and realization:
+
+{'0-0': 0.00016530107256762592, '0-1': 1.3408000988008726e-05, '6-0': 0.07672118347561399, '6-1': 0.013963517996908944, '10-0': 0.0, '10-1': 0.0}
+
+Cluster components and count:
+
+{'0-0': [[[2, 4, 53], [6, 14, 56, 62], [7, 69, 93], [10, 70], [11, 92], [13, 81, 82], [18, 95], [21, 78], [22, 39], [25, 32, 36, 41, 99], [27, 34], [28, 50], [29, 73, 76], [31, 83], [33, 63, 74], [44, 85, 89], [46, 52], [48, 94], [55, 58], [60, 61], [77, 79]]], '0-1': [[[11, 92], [44, 85, 89]]], '6-0': [[[11, 92], [27, 34], [48, 94]]], '6-1': [[[11, 92]]], '10-0': [[]], '10-1': [[]]}
+{'0-0': [21], '0-1': [2], '6-0': [3], '6-1': [1], '10-0': [0], '10-1': [0]}
+
+At the begining of the simulaiton, 6 seconds, and 10 seconds.
+
+Next: automation
