@@ -1,0 +1,99 @@
+Everything needed to reproduce the results reported in Section 3.2 Sensitivity analysis in the 
+following preprint:
+
+
+
+
+To run all conditions except ones where the number of cells is changed, simply run run_simulations.py. For instance as 
+
+python3 run_sensitivity.py
+
+in our case. 
+
+Then use the following scripts for post-processing:
+
+cluster_maps.py - visualizations of cells and clusters inside the channel at select times
+cluster_maps_specific.py - same for user-defined select property sets
+
+get_statistics.py - statistics on area ratios, cluster numbers, and sizes. Statistics are averages and standard deviations over averages across each realizations. Specifically, time averages across a predefined time window in every individual realization. Cluster sizes are calculated only from existing clusters.
+
+failure_statistics.py - %bonds that failed in tension, shear, and alongation. Average over all realizations.
+
+single_realization.py - time evolution of the above three properties for one realization that is closest to the ensemble average w.r.t. its area ratio; it indicates the averaging interval.
+
+time_evolution.py - time evolution of the three properties (ratios, numbers, sizes) for each realization and their instantenous average across all realizations.
+
+Post-processing code that starts with lift_ and numbers_ postprocesses results from simulations with variable lift and cell densities, respectively.
+
+Other files (that do not need modification)
+
+simulation.cpp - core C++ code for setting up and running a simulation (and all realizations)
+
+make_initial.py - creates initial configuration i.e. spatial distribution of single cells and clusters of various sizes
+
+compilation.py - compiles the C++ code
+
+parameters.txt - all input parameters (with changes set by the run_simulations.py driver)
+
+experimental_area.txt - area ratios (in %) for each wall shear stress scenario (0, 2, 5, and 20) from 
+
+Marrella A, Fedi A, Varani G, et al (2021) 
+High blood flow shear stress values are associated with circulating tumor cells cluster disaggregation in a multi-channel microfluidic device.
+PLoS One 16(1):e0245536. 
+https://doi.org/10.1371/journal.pone.0245536  
+
+---- To change the cell number:
+
+1) Change it in run_sensitivity.
+
+Here:
+
+def simulation_driver(new_tag, new_value):
+
+    # Settings 
+    exe_name         = 'lns'
+    compile_script   = 'compilation.py'
+    param_file       = 'parameters.txt'
+    log_name         = 'sim_progress.log'
+	---> Np = 300 
+ 
+And here:
+
+   	'Single cell lift coefficient': [0, 0.2],
+    'Cell cluster lift coefficient': [-0.143, -0.077],
+#     'Number of particles': [200] #[200, 400] 
+}
+
+2) Change it in make_initial.py:
+
+Here:
+# Total number of cells
+n_cells = 300
+
+3) Adjust the number of cell clusters
+
+200 cells used here
+
+# Number of clusters of each size
+n_single = int(56*2/3) + 9
+n_2cluster =int( 25*2/3)
+n_3cluster =int( 16*2/3)
+n_4cluster =int( 12*2/3)
+n_5cluster =int( 10*2/3)
+n_6cluster =int( 8*2/3)
+
+400 cells 
+
+# Number of clusters of each size
+n_single = int(56*4/3) + 8
+n_2cluster =int( 25*4/3)
+n_3cluster =int( 16*4/3)
+n_4cluster =int( 12*4/3)
+n_5cluster =int( 10*4/3)
+n_6cluster =int( 8*4/3)
+
+
+
+
+
+ 
