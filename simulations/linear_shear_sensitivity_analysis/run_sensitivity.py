@@ -78,10 +78,6 @@ def simulation_driver(new_tag, new_value):
         params[new_tag] = new_value 
         ut.sub_parameters(params, param_file)
 
-        # Remove this !!!!!!!!!!!!!!!!!!!!!!
-        params['Cell cluster lift coefficient'] = params['Single cell lift coefficient']/2
-
-
         # Run the simulation
         subprocess.call(['./' + exe_name], shell = True)
 
@@ -156,13 +152,13 @@ subprocess.call([py_version + ' compilation.py'], shell=True)
 
 # Parameters (changing one at a time)
 params = {
-#    'Bond normal stiffness': [1.4e-5, 2.6e-5],
-#    'Bond shear stiffness':  [0.7e-17, 1.3e-17],
-#    'Bond normal strength':  [3.5e-10, 6.5e-10],
-#    'Bond shear strength':   [5.6e-24, 10.4e-24],
-#    'Single cell lift coefficient': [-0.14, -0.26],
-    'Single cell lift coefficient': [0, 0.2],
-#    'Cell cluster lift coefficient': [-0.143, -0.077],
+    'Bond normal stiffness': [1.4e-5, 2.6e-5],
+    'Bond shear stiffness':  [0.7e-17, 1.3e-17],
+    'Bond normal strength':  [3.5e-10, 6.5e-10],
+    'Bond shear strength':   [5.6e-24, 10.4e-24],
+    'Single cell lift coefficient': [-0.14, -0.26],
+   	'Single cell lift coefficient': [0, 0.2],
+    'Cell cluster lift coefficient': [-0.143, -0.077],
 #     'Number of particles': [200] #[200, 400] 
 }
 
