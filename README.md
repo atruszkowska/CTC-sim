@@ -29,12 +29,23 @@ The current implementation is serial and runs on a single CPU core.
 
 ## Structure
 
-* `documentation` - directory where Doxygen will generate documentation files if run
 * `include` - header files
 * `src` - source files
 * `scripts` - utility scripts
 * `simulations` - input files for all simulations
 * `tests` - test suite for the code
+
+## Documentation
+
+After running `config.py`, source code documentation can be generated using [Doxygen](https://www.doxygen.nl/). Run Doxygen using the provided `Doxyfile`:
+
+```text id="k5q2rs"
+doxygen Doxyfile
+```
+
+The generated documentation will be placed in the `documentation` directory created by `config.py`.
+
+Instructions for running individual simulations are provided in `README` files within the corresponding directories under `simulations`.
 
 ## Testing and validation
 
